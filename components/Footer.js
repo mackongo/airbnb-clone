@@ -26,7 +26,6 @@ function Footer() {
         <h5 className="font-bold">HOST</h5>
         <p>Youtube</p>
         <p>Presents</p>
-        <p>PapaReact</p>
         <p>Awesome Build</p>
         <p>Join Now</p>
       </div>
