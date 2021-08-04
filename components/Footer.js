@@ -13,7 +13,7 @@ function Footer() {
         <p>Airbnb Luxe</p>
       </div>
 
-       <div className="space-y-4 text-xs text-gray-800">
+      <div className="space-y-4 text-xs text-gray-800">
         <h5 className="font-bold">COMMUNITY</h5>
         <p>Accessibility</p>
         <p>This is not a real site</p>
@@ -22,7 +22,7 @@ function Footer() {
         <p>Ally Makongo</p>
       </div>
 
-        <div className="space-y-4 text-xs text-gray-800">
+      <div className="space-y-4 text-xs text-gray-800">
         <h5 className="font-bold">HOST</h5>
         <p>Youtube</p>
         <p>Presents</p>
@@ -31,22 +31,22 @@ function Footer() {
         <p>Join Now</p>
       </div>
 
-       <div className="space-y-4 text-xs text-gray-800">
+      <div className="space-y-4 text-xs text-gray-800">
         <h5 className="font-bold">POLICY</h5>
         <p>Users Acceptance</p>
         <p>6 Figures Salaries</p>
         <p>Podcast</p>
         <p>Developer Journey</p>
-        <p>Zero to Hero</p>
+        <p>Zero to Hero Coder</p>
       </div>
 
-        <div className="space-y-4 text-xs text-gray-800">
-        <h5 className="font-bold">ABOUT</h5>
-        <p>How Airbnb works</p>
-        <p>News Room</p>
-        <p>Investors</p>
-        <p>Airbnb Plus</p>
-        <p>Airbnb Luxe</p>
+      <div className="space-y-4 text-xs text-gray-800">
+        <h5 className="font-bold">CONTACT</h5>
+        <p className="font-semibold text-black">mackongo@gmail.com</p>
+        <p>Acacia Estates Kinondoni</p>
+        <p>Dar es salaam</p>
+        <p>Tanzania</p>
+        <p><span>Code is Life</span></p>
       </div>
 
     </div>

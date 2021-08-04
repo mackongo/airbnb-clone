@@ -40,15 +40,16 @@ export default function Home({ exploreData, cardsData }) {
 
         </section>
 
-        <section>
+        <section className="pt-6 max-w-7xl mx-auto sm:px-16">
+
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
 
-          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="flex items-center space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
             {cardsData.map(item =>
               <MediumCard
                 key={item.img}
                 img={item.img}
-                title={item.img} />
+                title={item.tite} />
             )}
           </div>
 
@@ -57,6 +58,8 @@ export default function Home({ exploreData, cardsData }) {
             title="The Greatest Outdoors"
             buttonText="Get Inspired"
           />
+
+          
 
         </section>
 
@@ -68,27 +71,28 @@ export default function Home({ exploreData, cardsData }) {
   )
 }
 
-//
-
 // tells Next JS to do server rendering
-export async function getStaticProps() {
+export async function getStaticProps(context) {
 
-  const exploreData = await fetch("https://links.papareact.com/pyp").
-    then(
-      (res) => {
-        res.json()
-      }
-    );
+  const res = await fetch(`https://links.papareact.com/pyp`)
+  const exploreData = await res.json()
 
+  if (!exploreData) {
+    return {
+      notFound: true,
+    }
+  }
 
-  const cardsData = await fetch("https://links.papareact.com/zp1").then(
-    res => res.json()
-  );
+  const res2 = await fetch(`https://links.papareact.com/zp1`)
+  const cardsData = await res2.json()
+
+  if(!cardsData){
+    return {
+      notFound: true,
+    }
+  }
 
   return {
-    props: {
-      exploreData,
-      cardsData
-    }
+    props: { exploreData, cardsData }, // will be passed to the page component as props
   }
 }
