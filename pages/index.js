@@ -5,6 +5,7 @@ import SmallCard from '../components/SmallCard';
 import MediumCard from '../components/MediumCard';
 import LargeCard from '../components/LargeCard';
 import Footer from '../components/Footer';
+import Copyright from '../components/Copyright';
 
 export default function Home({ exploreData, cardsData }) {
 
@@ -28,13 +29,13 @@ export default function Home({ exploreData, cardsData }) {
           {/* pull some data from the server */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {exploreData.map(({ img, distance, location }) =>
-            <SmallCard
-              key={img}
-              img={img}
-              distance={distance}
-              location={location}
-            />
-          )}
+              <SmallCard
+                key={img}
+                img={img}
+                distance={distance}
+                location={location}
+              />
+            )}
 
           </div>
 
@@ -56,14 +57,14 @@ export default function Home({ exploreData, cardsData }) {
           <LargeCard
             img="https://links.papareact.com/4cj"
             title="The Greatest Outdoors"
-            buttonText="Get Inspired"
-          />
-
-          
+            buttonText="Get Inspired" />
 
         </section>
 
         <Footer />
+        <div className="text-center bg-black h-16">
+          <Copyright />
+        </div>
 
       </main>
 
@@ -86,7 +87,7 @@ export async function getStaticProps(context) {
   const res2 = await fetch(`https://links.papareact.com/zp1`)
   const cardsData = await res2.json()
 
-  if(!cardsData){
+  if (!cardsData) {
     return {
       notFound: true,
     }
