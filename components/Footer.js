@@ -4,10 +4,11 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className="text-center grid grid-cols-1 md:grid-cols-5 gap-y-10 px-32 py-14 bg-gray-100">
 
+    <div className="text-center grid grid-cols-1 md:grid-cols-5 gap-y-10 px-32 py-14 bg-gray-100">
+    
       <div className="space-y-4 text-xs text-gray-800 text-left">
-        <h5 className="font-bold text-2xl">Download AirBnB</h5>
+        <h5 className="font-bold text-2xl">Download</h5>
         <div className="cursor-pointer">
           <Image
             src="https://www.seekpng.com/png/detail/34-349265_app-store-google-play-svg.png"
