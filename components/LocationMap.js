@@ -3,6 +3,8 @@ import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
 import { useState } from 'react';
 import { getCenter, getDistance } from 'geolib';
 import { StarIcon } from '@heroicons/react/solid';
+import Geocoder from 'react-map-gl-geocoder'
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
 
 function LocationMap({ searchResults }) {
 
@@ -19,8 +21,6 @@ function LocationMap({ searchResults }) {
   }));
 
   console.log(selectedLocation);
-
-
   const center = getCenter(coordinates);
 
   const [viewport, setViewport] = useState({
@@ -30,6 +30,8 @@ function LocationMap({ searchResults }) {
     longitude: center.longitude,
     zoom: 11
   });
+
+  const mapRef = React.createRef()
 
   return (<ReactMapGL
     mapStyle="mapbox://styles/mackongo/cks0zn6ro46ce17pea52v825n"
