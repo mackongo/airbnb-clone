@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
+import LocationMap from '../components/LocationMap';
 
 function Search({ searchResults }) {
 
@@ -17,7 +18,6 @@ function Search({ searchResults }) {
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
   const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
-
 
   return (
 
@@ -59,6 +59,10 @@ function Search({ searchResults }) {
             ))}
           </div>
 
+        </section>
+
+        <section className="hidden xl:inline-flex xl:min-w-[600px]">
+          <LocationMap searchResults={searchResults} />
         </section>
 
       </main>
